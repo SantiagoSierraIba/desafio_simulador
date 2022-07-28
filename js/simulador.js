@@ -22,29 +22,24 @@
 
 alert("Bienvenidos a la calculadora de promedios ponderados")
 let cantMaterias=parseInt(prompt("Ingrese la cantidad de materias: "))
-let nota=0;
-let creditos=0;
-let ponderada=0;
-let creditosTotales=0;
-let suma=0;
 
-function promedio(not, credito){
-    ponderada=nota*creditos
-    creditosTotales=creditosTotales+creditos
-    suma=suma+ponderada
+let nota=null;
+let creditos=null;
+let creditosTotales=null;
+let suma=null;
+
+function promedio(parametro1, parametro2){
+    let ponderada=parametro1*parametro2
     console.log(ponderada)
+    suma += ponderada
+    creditosTotales += parametro2
 }
 
 for (let i=1; i<=cantMaterias;i++){
-    nota=0;
-    creditos=0;
-    ponderada=0;
-
     nota=parseFloat(prompt("Ingrese la nota de la materia "+ i))
-    debugger
     creditos=parseInt(prompt("Ingrese el número de créditos de la materia "+ i))
     promedio(nota,creditos);
 }
 
-promedioPonderado=suma/creditosTotales
+let promedioPonderado=suma/creditosTotales
 alert("Su promedio ponderado es: "+ promedioPonderado)
